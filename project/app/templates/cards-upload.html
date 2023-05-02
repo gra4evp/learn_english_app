@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page-title %}
+Загрузка карточки
+{% endblock %}
+
+{% block page-lead %}
+На данной странице вы можете загрузить карточку для запоминания слов
+{% endblock %}
+
+{% block content %}
+<form method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="w-25" type="submit">Загрузить</button>
+</form>
+{% endblock %}

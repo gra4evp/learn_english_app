@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link href="static/words.css" rel="stylesheet">
+{% endblock %}
+
+{% block pagetitle %}
+Иностранные слова
+{% endblock %}
+
+{% block page-title %}
+Иностранные слова
+{% endblock %}
+
+{% block page-lead %}
+На данной странице вы можете посмотреть ваши слова.
+Изучайте новые слова, а также не забывайте регулярно повторять уже пройденный материал.
+Вы можете загрузить слово <a href="{% url 'app:words_upload' %}">здесь.</a>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap justify-content-start align-items-center gap-5">
+{% for word in object_list %}
+    <div class="bg-secondary p-2 rounded-3" style="min-width: 140px;">
+        <h4 class="text-light font-weight-bold">{{ word.en_word }}</h4>
+        <div>{{ word.ru_word }}</div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

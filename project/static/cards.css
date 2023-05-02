@@ -1,0 +1,33 @@
+.card {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #A0A0A0;
+    border-radius: 10px;
+}
+
+.card_word {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 0;
+    color: #FFFFFF;
+}
+
+.card_ru-word {
+    color: #FFFFFF;
+}
+
+.card_img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.card_img {
+    height: 100%;
+    max-width: 100%;
+}

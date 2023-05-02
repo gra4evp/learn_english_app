@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page-title %}
+Загрузка слов
+{% endblock %}
+
+{% block page-lead %}
+На данной странице вы можете загрузить слова
+{% endblock %}
+
+{% block content %}
+<form method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="w-25" type="submit">Загрузить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link href="static/cards.css" rel="stylesheet">
+{% endblock %}
+
+{% block pagetitle %}
+Карточки слов
+{% endblock %}
+
+{% block page-title %}
+Карточки слов
+{% endblock %}
+
+{% block page-lead %}
+На данной странице вы можете посмотреть ваши карточки слов. Вы можете загрузить карточку <a href="{% url 'app:cards_upload' %}">здесь</a>
+Анки-карточки могут быть использованы для изучения новых тем, повторения материала, а также для подготовки к экзаменам и тестированию.
+Этот метод обучения популярен среди студентов и профессионалов, которые хотят эффективно запомнить большое количество информации.
+{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-4">
+{% for card in object_list %}
+    <div class="card">
+        <div class="card_word">{{ card.en_word }}</div>
+        <div class="card_img-wrapper">
+            <img class="card_img" src="{{ card.pic.url }}"/>
+        </div>
+        <div class="card_word card_ru-word">{{ card.ru_word }}</div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
